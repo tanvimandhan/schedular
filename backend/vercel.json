@@ -1,6 +1,5 @@
 {
-  "buildCommand": "npm run build",
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "buildCommand": "npm ci && npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm ci"
 }
