@@ -84,12 +84,17 @@ export class SlotController {
         message: 'Weekly schedule retrieved successfully'
       };
       res.json(response);
-    } catch (error) {
-      console.error('Error fetching weekly schedule:', error);
+    } catch (error: any) {
+      console.error('Error fetching weekly schedule:', {
+        message: error?.message,
+        code: error?.code,
+        errno: error?.errno,
+        stack: error?.stack
+      });
       const response: ApiResponse<null> = {
         success: false,
         error: 'Internal server error',
-        message: 'Failed to fetch weekly schedule'
+        message: process.env.NODE_ENV === 'development' ? error?.message : 'Failed to fetch weekly schedule'
       };
       res.status(500).json(response);
     }

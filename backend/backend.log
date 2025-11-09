@@ -1,0 +1,8 @@
+Database Configuration: {
+  client: 'postgresql',
+  environment: 'development',
+  hasConnectionString: true
+}
+🚀 Scheduler API server running on port 3001
+📊 Environment: development
+🌐 Health check: http://localhost:3001/api/health

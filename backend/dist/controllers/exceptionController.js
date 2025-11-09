@@ -83,11 +83,16 @@ class ExceptionController {
             res.json(response);
         }
         catch (error) {
-            console.error('Error fetching exceptions:', error);
+            console.error('Error fetching exceptions:', {
+                message: error?.message,
+                code: error?.code,
+                errno: error?.errno,
+                stack: error?.stack
+            });
             const response = {
                 success: false,
                 error: 'Internal server error',
-                message: 'Failed to fetch exceptions'
+                message: process.env.NODE_ENV === 'development' ? error?.message : 'Failed to fetch exceptions'
             };
             res.status(500).json(response);
         }

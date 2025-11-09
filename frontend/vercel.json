@@ -4,15 +4,10 @@
   "env": {
     "VITE_API_URL": "@vite_api_url"
   },
-  "headers": [
+  "rewrites": [
     {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
+      "source": "/:path*",
+      "destination": "/index.html"
     }
   ]
 }
