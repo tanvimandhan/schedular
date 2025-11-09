@@ -1,10 +1,4 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "env": {
-    "NODE_ENV": "production",
-    "DATABASE_URL": "@database_url",
-    "JWT_SECRET": "@jwt_secret",
-    "FRONTEND_URL": "@frontend_url"
-  }
+  "buildCommand": "npm run build"
 }
